@@ -18,6 +18,7 @@ documenta y se justifica, no como un atajo silencioso.
 
 ## Indice
 
+- [Ficha rapida para quien evalua](contexto.md)
 - [Arquitectura de red y segmentacion](docs/01-arquitectura-red-segmentacion.md)
 - [Caso de estudio: monitoreo bloqueado por segmentacion](docs/casos-de-estudio/01-monitoreo-bloqueado-por-segmentacion.md)
 
