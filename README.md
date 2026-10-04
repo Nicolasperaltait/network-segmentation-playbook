@@ -2,6 +2,14 @@
 
 > Segmentar por funcion, tratar el DNS como dependencia critica y justificar cada excepcion.
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Segmentacion-1F2937?style=for-the-badge&logo=proxmox&logoColor=white" alt="Segmentacion" />
+  <img src="https://img.shields.io/badge/DNS_interno-B91C1C?style=for-the-badge&logo=pihole&logoColor=white" alt="DNS interno" />
+  <img src="https://img.shields.io/badge/Firewall_por_host-111827?style=for-the-badge&logo=linux&logoColor=white" alt="Firewall por host" />
+  <img src="https://img.shields.io/badge/13.017_frenados-242424?style=for-the-badge&logo=tailscale&logoColor=white" alt="13.017 frenados" />
+  <img src="https://img.shields.io/badge/Resultados_medidos-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Resultados medidos" />
+</p>
+
 Este repositorio documenta, de forma sanitizada, el diseno de red de una infraestructura productiva personal (homelab): segmentacion por funcion dentro de un unico hipervisor,
 DNS interno centralizado, y un caso real donde la propia segmentacion bloqueo
 un flujo de monitoreo legitimo.
