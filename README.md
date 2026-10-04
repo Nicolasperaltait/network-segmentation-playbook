@@ -6,35 +6,37 @@ Este repositorio documenta, de forma sanitizada, el diseno de red de una infraes
 DNS interno centralizado, y un caso real donde la propia segmentacion bloqueo
 un flujo de monitoreo legitimo.
 
-Es parte de un portfolio tecnico. **No es un laboratorio de prueba**: es una
-**infraestructura productiva personal**. Un hipervisor de tipo 1 sobre un
-servidor dedicado, encendido 24/7, del que dependen todos los dias la red de la
-casa, los backups, la seguridad y aplicaciones en uso real. Si se apaga, se nota.
+Es parte de un portfolio tecnico. **No es un laboratorio de prueba: es
+infraestructura productiva.** No tiene la escala de una empresa, pero tiene
+todas sus piezas -virtualizacion, red segmentada, DNS, almacenamiento, backups
+con copia externa, monitoreo, SIEM, acceso remoto y aplicaciones en uso- y
+funciona 24/7 sobre un hipervisor de tipo 1 en un servidor dedicado. Cuando
+algo falla, el impacto es real.
 
 La documentacion operativa es privada. Esto es su version transformada
 -decisiones, patrones y aprendizajes-, sin datos que permitan identificar o
 reproducir el entorno.
 
-Lo que busca demostrar: criterio para segmentar una red domestica por
-funcion cuando la red fisica no da soporte nativo a esa segmentacion,
+Lo que busca demostrar: criterio para segmentar una red por funcion cuando
+el equipamiento fisico no da soporte nativo a esa segmentacion,
 capacidad de razonar sobre DNS interno como dependencia critica, y el
 habito de tratar cada excepcion a una regla de segmentacion como algo que se
 documenta y se justifica, no como un atajo silencioso.
 
-## Por que es infraestructura productiva
+## Escala chica, exigencia de produccion
 
-| Servicio que corre 24/7 | Que pasa si se cae |
-|---|---|
-| DNS de toda la red de la casa | ningun equipo resuelve nombres: para quien la usa, "se corto internet" |
-| Backups nocturnos y copia cifrada fuera del sitio | se pierde la proteccion de los datos y nadie lo nota hasta necesitarla |
-| SIEM, metricas y alertas al telefono | los incidentes pasan sin que nadie se entere |
-| Acceso remoto por malla | no hay forma de operar desde fuera de casa |
-| NAS y espejo de la estacion de trabajo | se corta la sincronizacion de los archivos de trabajo |
-| Aplicaciones propias en uso diario | se frena el uso real, incluido el envio de correo |
-| Remoto de codigo propio | no hay donde versionar ni desde donde desplegar |
+| Pieza | Que hace | Si falla |
+|---|---|---|
+| Virtualizacion | hipervisor de tipo 1, una maquina por funcion | cae todo lo demas |
+| DNS interno | resolucion para todos los equipos y servicios | todo parece caido aunque este sano |
+| Red y acceso remoto | zonas por funcion, malla sin puertos abiertos | se pierde el aislamiento o el acceso desde afuera |
+| Almacenamiento y backups | NAS, backups nocturnos, copia cifrada externa, pruebas de restauracion | se pierde la capacidad de recuperar |
+| Monitoreo, SIEM y alertas | metricas, eventos de seguridad, avisos al telefono | los incidentes pasan sin que nadie se entere |
+| Aplicaciones propias | en uso diario; una envia correo real | se frena trabajo real |
+| Remoto de codigo | versionado y despliegue de esas aplicaciones | no hay donde versionar ni desde donde desplegar |
 
-Por eso cada cambio se trata como en produccion: plan, rollback, evidencia y
-verificacion de que lo que tiene que fallar, falla.
+Lo mismo que en una empresa, en chico: cambios con plan y rollback, evidencia,
+alertas que avisan solas y controles que se prueban haciendolos fallar.
 
 ## En 30 segundos
 
@@ -57,6 +59,16 @@ flowchart LR
 ```
 
 Detalle con cifras: [Resultados medidos](docs/02-resultados-medidos.md).
+
+## Problema, decision, resultado
+
+| Problema | Por que importaba | Que se hizo | Resultado |
+|---|---|---|---|
+| Un flujo de monitoreo legitimo quedaba bloqueado por la segmentacion | abrir la zona entera rompia el modelo | permitir solo colector hacia exportador, documentado | monitoreo restaurado sin lateralidad |
+| El router traia Telnet accesible desde Wi-Fi y UPnP con un puerto huerfano | credenciales en texto plano y puertos sin dueno | endurecimiento completo del borde | 0 puertos entrantes, gestion solo por cable |
+| Se iba a instalar un firewall nuevo sin saber que filtraba cada host | trabajo duplicado y riesgo de romper lo que andaba | relevar primero, con contadores reales | plan corregido, 6 reglas muertas retiradas |
+
+El detalle de cada uno, con lo que salio mal en el camino, esta en los casos de estudio.
 
 ## Indice
 

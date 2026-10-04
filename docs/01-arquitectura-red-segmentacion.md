@@ -75,7 +75,7 @@ control entre zonas.
 | DNS interno | si falla, muchos servicios parecen caidos |
 | Storage | impacta backups, retencion y recuperacion |
 | Plataforma de contenedores | concentra apps, proxy y observabilidad |
-| Puerta de acceso remoto | unico acceso desde fuera de casa |
+| Puerta de acceso remoto | unico acceso desde fuera del sitio |
 
 ## Publicacion de servicios
 

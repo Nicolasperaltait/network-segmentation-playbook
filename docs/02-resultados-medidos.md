@@ -32,7 +32,7 @@ comodidad, no para seguridad. Se revisaron todas las paginas de reglas.
 | Credencial de administracion | S/D | cambiada, guardada en gestor de contrasenas |
 
 **El hallazgo mas grave fue Telnet desde Wi-Fi:** credenciales en texto plano,
-alcanzables desde cualquier red inalambrica de la casa, incluida la de
+alcanzables desde cualquier red inalambrica del sitio, incluida la de
 invitados, porque el equipo no aisla una red de otra.
 
 **El mapeo UPnP es la mejor ilustracion del problema de UPnP:** un puerto
