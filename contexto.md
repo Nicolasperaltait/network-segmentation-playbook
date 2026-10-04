@@ -1,4 +1,4 @@
-# Contexto - homelab-red-dns
+# Contexto - network-segmentation-playbook
 
 Ficha de lectura rapida: que es, por que existe y que muestra.
 
