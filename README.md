@@ -3,11 +3,11 @@
 > Segmentar por funcion, tratar el DNS como dependencia critica y justificar cada excepcion.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Segmentacion-1F2937?style=for-the-badge&logo=proxmox&logoColor=white" alt="Segmentacion" />
-  <img src="https://img.shields.io/badge/DNS_interno-B91C1C?style=for-the-badge&logo=pihole&logoColor=white" alt="DNS interno" />
-  <img src="https://img.shields.io/badge/Firewall_por_host-111827?style=for-the-badge&logo=linux&logoColor=white" alt="Firewall por host" />
-  <img src="https://img.shields.io/badge/13.017_frenados-242424?style=for-the-badge&logo=tailscale&logoColor=white" alt="13.017 frenados" />
-  <img src="https://img.shields.io/badge/Resultados_medidos-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Resultados medidos" />
+  <img src="https://img.shields.io/badge/Segmentacion-2563EB?style=for-the-badge&logo=proxmox&logoColor=white" alt="Segmentacion" />
+  <img src="https://img.shields.io/badge/DNS_interno-DC2626?style=for-the-badge&logo=pihole&logoColor=white" alt="DNS interno" />
+  <img src="https://img.shields.io/badge/Firewall_por_host-1F2937?style=for-the-badge&logo=linux&logoColor=white" alt="Firewall por host" />
+  <img src="https://img.shields.io/badge/13.017_frenados-7C3AED?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAxIDMgNXY2YzAgNS42IDMuOCAxMC43IDkgMTIgNS4yLTEuMyA5LTYuNCA5LTEyVjV6Ii8%2BPC9zdmc%2B&logoColor=white" alt="13.017 frenados" />
+  <img src="https://img.shields.io/badge/Resultados_medidos-D97706?style=for-the-badge&logo=grafana&logoColor=white" alt="Resultados medidos" />
 </p>
 
 Este repositorio documenta, de forma sanitizada, el diseno de red de una infraestructura productiva personal (homelab): segmentacion por funcion dentro de un unico hipervisor,
