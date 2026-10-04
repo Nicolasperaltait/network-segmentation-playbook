@@ -60,6 +60,13 @@ flowchart LR
 
 Detalle con cifras: [Resultados medidos](docs/02-resultados-medidos.md).
 
+## En vivo
+
+_Capturas reales del entorno, con nombres, direcciones, usuarios y versiones reemplazados por su funcion._
+
+![Pi-hole con consultas y bloqueos de las ultimas 24 horas](docs/img/pihole-dashboard.png)
+<sub>Pi-hole en 24 horas: 133.123 consultas, 5.619 bloqueadas (4,2 %) y 74.761 dominios en listas.</sub>
+
 ## Problema, decision, resultado
 
 | Problema | Por que importaba | Que se hizo | Resultado |
