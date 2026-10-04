@@ -23,7 +23,7 @@ privado; este repo es su version transformada.
 | Item | Valor |
 | --- | --- |
 | Formato | Markdown y diagramas Mermaid, sin codigo |
-| Casos de estudio | 1 (monitoreo legitimo bloqueado por la propia segmentacion) |
+| Casos de estudio | 1 (monitoreo legitimo bloqueado por la propia segmentacion), mas un documento de resultados medidos |
 | Perfil al que apunta | Redes, infraestructura, seguridad |
 | Estado | Completo, se amplia con casos nuevos |
 

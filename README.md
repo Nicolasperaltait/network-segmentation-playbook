@@ -18,10 +18,33 @@ capacidad de razonar sobre DNS interno como dependencia critica, y el
 habito de tratar cada excepcion a una regla de segmentacion como algo que se
 documenta y se justifica, no como un atajo silencioso.
 
+## En 30 segundos
+
+| Indicador | Resultado |
+|---|---|
+| Puertos entrantes abiertos en el borde | **0** |
+| Intentos no autorizados frenados por la politica en un solo incidente | **13.017** en 34 horas |
+| Paquetes descartados por politica en los hosts que filtran | **19.256** |
+| Superficie de gestion cerrada en el router | Telnet y web desde Wi-Fi, FTP, UPnP |
+| Reglas de firewall muertas retiradas | **6** |
+
+```mermaid
+flowchart LR
+    I((Internet)) -.->|0 puertos entrantes| B[Router de borde]
+    B --> ADM[Administracion]
+    ADM -->|flujos minimos| SRV[Servicios]
+    ADM -->|flujos minimos| SEC[Seguridad]
+    SRV -->|solo metricas| SEC
+    M[Malla de acceso remoto] -->|politica por puerto| ADM
+```
+
+Detalle con cifras: [Resultados medidos](docs/02-resultados-medidos.md).
+
 ## Indice
 
 - [Ficha rapida para quien evalua](contexto.md)
 - [Arquitectura de red y segmentacion](docs/01-arquitectura-red-segmentacion.md)
+- [Resultados medidos: que se filtro, que no y que se previno](docs/02-resultados-medidos.md)
 - [Caso de estudio: monitoreo bloqueado por segmentacion](docs/casos-de-estudio/01-monitoreo-bloqueado-por-segmentacion.md)
 
 ## Parte de una serie

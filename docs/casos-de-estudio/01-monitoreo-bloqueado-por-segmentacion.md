@@ -23,6 +23,32 @@ El patron de resolucion fue:
 - documentar la excepcion y su razon
 - validar que el dashboard vuelva a representar metricas reales
 
+## Como quedo
+
+```mermaid
+flowchart LR
+    subgraph SRV[Zona de servicios]
+        COL[Colector de metricas]
+    end
+    subgraph SEC[Zona de seguridad]
+        EXP[Exportador de metricas]
+    end
+    subgraph ADM[Zona de administracion]
+        OTRO[Otro equipo de la LAN]
+    end
+    COL -->|PERMITIDO: unico flujo, documentado| EXP
+    OTRO -.->|BLOQUEADO por el firewall del host| EXP
+```
+
+| Opcion evaluada | Resultado | Por que |
+|---|---|---|
+| Abrir la zona de seguridad a la de servicios | descartada | convierte una necesidad puntual en lateralidad general |
+| Permitir solo colector hacia exportador, en su puerto | **adoptada** | minimo, explicito y documentado |
+
+El registro del firewall del host mostro despues intentos bloqueados desde
+otro equipo de la LAN hacia el mismo exportador: **la regla hace exactamente
+lo que dice**, y nada mas.
+
 ## Validacion
 
 El patron de validacion fue:
