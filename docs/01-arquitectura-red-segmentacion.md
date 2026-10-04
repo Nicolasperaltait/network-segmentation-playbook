@@ -4,7 +4,7 @@
 
 ## Proposito
 
-Describir la arquitectura de red del homelab -segmentacion y DNS interno- de
+Describir la arquitectura de red de la infraestructura -segmentacion y DNS interno- de
 manera clara y sanitizada.
 
 ## Principios de diseno
